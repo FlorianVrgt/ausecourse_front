@@ -59,14 +59,14 @@ export class NavbarComponent implements OnInit {
   	this.userService.logout().subscribe(
 		res => {
 
-			//location.reload();
+		
 			this.loggedIn = false ;	
 			this.router.navigate(['/']);	
 		}, 
 		error => {
 
 			console.log(error);
-			//location.reload();
+
 		}
 
   	);

@@ -39,7 +39,7 @@ export class ProductService {
 
 	addProduct(name : string, qty:number) {
 		let url = AppConst.serverPath+"ListeCourse/addToList";
-    console.log("merde " + url) ;
+
 		let tokenHeader = new HttpHeaders({
 			'Content-Type' : 'application/json',
 			'x-auth-token' : localStorage.getItem('xAuthToken')
