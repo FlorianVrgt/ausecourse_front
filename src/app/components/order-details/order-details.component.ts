@@ -19,6 +19,9 @@ export class OrderDetailsComponent implements OnInit {
 	private id : string ; //order id
 	private clientId: string ;
 	private client : User ;
+  private onprogress : boolean  = false ; 
+  private delivered : boolean = false ; 
+  private paid : boolean = false ; 
 
 
   constructor(private userService :UserService,
@@ -32,7 +35,8 @@ export class OrderDetailsComponent implements OnInit {
     this.orderService.onProgress(this.id).subscribe(
       (res: string) => {
          console.log(res);
-        this.openSnackBar("onProgress");
+        //this.openSnackBar("onProgress");
+        this.onprogress = true ; 
       },
       error => {
         console.log(error) ;
@@ -45,7 +49,8 @@ export class OrderDetailsComponent implements OnInit {
   	this.orderService.onDelivered(this.id).subscribe(
       (res: string) => {
        	console.log(res);
-        this.openSnackBar("Delivered");
+        //this.openSnackBar("Delivered");
+        this.delivered = true ; 
       },
       error => {
         console.log(error) ;
@@ -58,8 +63,8 @@ export class OrderDetailsComponent implements OnInit {
   	this.orderService.onPaid(this.id).subscribe(
       (res: string) => {
        	console.log(res);
-        this.openSnackBar("Paid");
-
+        //this.openSnackBar("Paid");
+         this.paid = true ; 
       },
       error => {
         console.log(error) ;
@@ -85,8 +90,6 @@ export class OrderDetailsComponent implements OnInit {
         duration: 2000,
       });
     }
-
-
   }
 
   ngOnInit() {

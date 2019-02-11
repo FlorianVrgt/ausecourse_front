@@ -5,15 +5,15 @@
 	  <mat-list-item  *ngFor="let order of orders">
 	     
 	    <div routerLink="/orderDetailsClient/{{order.livreurId}}/{{order.string}}" class="row" style="width: 100%; margin: 0px;"> 
-	    	<div class="col-8">
+	    	<div class="col-8 cut-text">
 	    		{{order.string}} 
 	    	</div>
 	    	<div class="col-4">
-				<button *ngIf="order.orderState == 'DELIVRED'" mat-button style="background-color: #e8ff59; text-align: center; width: 100% ; font-size: 60%;">{{order.orderState}}</button>	    		
-				<button *ngIf="order.orderState == 'INPROGRESS'" mat-button style="background-color: #ffe785; text-align: center; width: 100% ; font-size: 60%;">{{order.orderState}}</button>
-			    <button *ngIf="order.orderState == 'CREATE'" mat-button style="background-color: #d6d6d6; width: 100% ; text-align: center; font-size: 60%;">{{order.orderState}}</button>
+				<button *ngIf="order.orderState == 'DELIVRED'" mat-button style="background-color: #e8ff59; text-align: center; width: 100% ; font-size: 60%;">Délivré</button>	    		
+				<button *ngIf="order.orderState == 'INPROGRESS'" mat-button style="background-color: #ffe785; text-align: center; width: 100% ; font-size: 60%;">Accepté</button>
+			    <button *ngIf="order.orderState == 'CREATE'" mat-button style="background-color: #d6d6d6; width: 100% ; text-align: center; font-size: 60%;">En attente</button>
 			
-				<button *ngIf="order.orderState == 'PAYED'" mat-button style="background-color: #b4d693; width: 100% ; text-align: center; font-size: 60%;">{{order.orderState}}</button>
+				<button *ngIf="order.orderState == 'PAYED'" mat-button style="background-color: #b4d693; width: 100% ; text-align: center; font-size: 60%;">Payé</button>
 	    	</div>
 	    	
 	    </div>

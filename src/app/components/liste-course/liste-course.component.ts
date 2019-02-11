@@ -23,6 +23,7 @@ export class ListeCourseComponent implements OnInit {
   private productAdded : boolean ; 
   private currentUser : User ;
   private listeCourseSaved : boolean ; 
+  private listevide : boolean ; 
 
   constructor(
 	  	private productService: ProductService,
@@ -56,7 +57,8 @@ export class ListeCourseComponent implements OnInit {
 
   onCheckout(){
     if(this.listaux.length==0){
-      this.openSnackBar();
+      //this.openSnackBar();
+      this.listevide = true ;
     }
     else
       this.router.navigate(['/livreurs']); 

@@ -1,9 +1,12 @@
-<div class="container border" style="margin-top: 40px; width: 40%;">
+<div class="container border" style="margin-top: 150px; width: 40%;">
 
+<div style="margin-top: -15%;" class="alert alert-info" *ngIf="accepted">
+     Vous venez d'accepter une commande !
+</div>
         
 
-          <h3 style="margin-left: 20%; margin-top: 2%;">Liste de vos commandes :</h3>
-          <br>
+          <h3 style="margin-left: 25%; margin-top: 35px;">Liste de vos livraisons :</h3>
+          
 
           <mat-nav-list style="width: 100%; ">
             <mat-list-item  *ngFor="let item of user.ordersToHandle">

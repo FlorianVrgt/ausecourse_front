@@ -1,7 +1,12 @@
 
 
 <div class="container border" style="margin-top: 180px;">
-  <mat-grid-list cols="2" rowHeight="3:2">
+
+<div style="width: 30%; margin-left: 35%; margin-top : -5%; background-color: #db7f7f;" class="alert alert-info" *ngIf="listevide">
+     Ajoutez au moins 1 produit à votre liste :(
+</div>
+
+  <mat-grid-list style="margin-top: 30px;" cols="2" rowHeight="3:2">
     <mat-grid-tile>
 
       <form (ngSubmit)="onAddProduct()">

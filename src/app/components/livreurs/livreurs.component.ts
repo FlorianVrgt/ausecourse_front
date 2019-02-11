@@ -18,6 +18,7 @@ export class LivreursComponent implements OnInit {
 	private livreurs : User[] ; 
 	private currentUser : User ; 
   private listCourse : ListeCourse ; 
+  private orderOK : boolean = false ; 
 
   constructor(private userService : UserService ,
     private orderService : OrderService , 
@@ -49,7 +50,9 @@ export class LivreursComponent implements OnInit {
     this.userService.notifyLivreur(order).subscribe(
       res => {
         console.log(res);
-        this.openSnackBar();
+        this.cookieService.remove("listId");
+        this.orderOK = true;  
+        //this.openSnackBar();
       },
       error => {
         console.log(error);      

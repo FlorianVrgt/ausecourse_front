@@ -34,7 +34,16 @@ export class LivreurDashboardComponent implements OnInit {
           (res:string) => {
             console.log(res); 
             this.accepted = true ;
-            this.openSnackBar();
+            //this.openSnackBar();
+        this.userService.getCurrentUser().subscribe(
+          res => {
+            this.user = res.json(); 
+
+          },
+          error => {
+            this.loggedIn=false;
+          }      
+        );            
           },
           error => {
             console.log(error);

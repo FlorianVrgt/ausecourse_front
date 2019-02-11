@@ -1,5 +1,15 @@
 <div class="container border" style="margin-top: 40px; width: 40%; ">
-  <div >
+
+  <div style="margin-top: -10%;" class="alert alert-info" *ngIf="onprogress">
+     Vous avez passez l'état de cette commande à Accepté.
+  </div>
+  <div style="margin-top: -10%;" class="alert alert-info" *ngIf="delivered">
+     Vous avez passez l'état de cette commande à Délivré.
+  </div>  
+  <div style="margin-top: -10%;" class="alert alert-info" *ngIf="paid">
+     Vous avez passez l'état de cette commande à Payé.
+  </div>  
+  <div style="margin-left: 1%; margin-top: 35px;">
   	<h3> Commande pour : {{client.username}} </h3> <br>
 
   	<h5> Adresse : {{client.city}}   </h5>

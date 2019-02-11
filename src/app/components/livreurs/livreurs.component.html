@@ -1,6 +1,14 @@
-<div class="container border" style="margin-top: 40px; width: 40%;">
 
-<h3> Choisissez un livreur autour de vous :</h3> <br>
+
+<div class="container border" style="margin-top: 150px; width: 40%;">
+
+<div style="margin-top: -15%;" class="alert alert-info" *ngIf="orderOK">
+     Votre commande est enregistrée, revenir à la page d'acceuil.
+     <button mat-button class="button" routerLink="/home">OK</button>
+</div>
+
+
+<h3 style="margin-top: 25px;"> Choisissez un livreur autour de vous :</h3> <br>
 <mat-nav-list style="width: 50%;">
      <mat-list-item *ngFor="let livreur of livreurs">
           <a *ngIf="livreur.stars < 1" matLine (click)="onNotifyLivreur(livreur)">{{ livreur.username }} &nbsp;
