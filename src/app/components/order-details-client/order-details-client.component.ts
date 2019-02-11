@@ -46,7 +46,9 @@ export class OrderDetailsClientComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      
+      var livreurId = this.route.snapshot.paramMap.get('livreurId');
+      var listString = this.route.snapshot.paramMap.get('listeCourse');
+      this.getLivreurById(livreurId);      
     });
   }  
 
