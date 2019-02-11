@@ -22,7 +22,6 @@ export class OrdersComponent implements OnInit {
 			this.orders = res ;
 
       for (let i = 0; i < this.orders.length ; i++) {
-        console.log("baba : " + this.orders[i].listeCourse );
         this.orders[i].string = this.orders[i].listeCourse.listeCourse[0].nom;
         for (let j = 1; j < this.orders[i].listeCourse.listeCourse.length ; j++) {
           this.orders[i].string = this.orders[i].string + ", " + this.orders[i].listeCourse.listeCourse[j].nom ;   

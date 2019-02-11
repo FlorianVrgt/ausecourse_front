@@ -45,18 +45,15 @@ export class LoginComponent implements OnInit {
 	onLogin() {
 	this.userService.sendCredential(this.credential.username, this.credential.password).subscribe(
 		res => {
-			console.log("merdeee " + res.json());
 			localStorage.setItem("xAuthToken", res.json().token);
 			this.loggedIn = true;
-			console.log("login works ! " + res.json().token);
 			//location.reload();
 
-			window.location.href = "http://localhost:4200/home" ;
+			window.location.href = "http://193.70.87.197:4200/home" ;
 		},
 		error => {
 			this.loggedIn = false;
 			this.loginError = true;
-			console.log("login not working :( ")
 		}
 	);
 
@@ -107,11 +104,9 @@ export class LoginComponent implements OnInit {
 		this.userService.checkSession().subscribe(
 			res => {
 				this.loggedIn = true ;
-				console.log("voila " + this.loggedIn);
 			},
 			error => {
 				this.loggedIn = false ;
-				console.log("voila " + this.loggedIn);
 			}
 		);
 
