@@ -13,6 +13,7 @@ import {Order} from '../models/order';
 })
 export class UserService {
 
+
 	private serverPath: string = "https://ausecourseback.herokuapp.com" ;
 
 	constructor(private http: Http, private router:Router,
@@ -35,7 +36,6 @@ export class UserService {
 
 	checkSession(){
 		let url = this.serverPath+"/checkSession";
-		console.log("xAuthToken hah: " + localStorage.getItem('xAuthToken'));
 		let headers = new Headers ({
 		'x-auth-token' : localStorage.getItem('xAuthToken')
 		});
@@ -53,7 +53,6 @@ export class UserService {
 
 
 	newUser(username: string, email:string, password: string, mode :string, addressLivraison:string, telephone:number) {
-		console.log("new userr  " + addressLivraison);
 		let url = this.serverPath+'/user/newUser';
 		let userInfo = {
 			"username" : username,
@@ -167,7 +166,6 @@ export class UserService {
 	}
 
 	makeReview(livreurId : string , nbStars : string) {
-		console.log("livreurId : " +  livreurId + " ----- " + "nbStars : " + nbStars);
 		let url = this.serverPath+'/user/makeReview';
 		let userInfo = {
 			"livreurId" : livreurId,
