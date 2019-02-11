@@ -5,33 +5,33 @@
     <mat-grid-tile>
 
       <form (ngSubmit)="onAddProduct()">
-        <h3>creez votre liste ici !</h3>
+        <h3>Créez votre liste ici !</h3>
         <br>
         <mat-form-field>
           <input matInput [(ngModel)]="name" name="name" placeholder="produit">
-        </mat-form-field> 
+        </mat-form-field>
         <br>
         <mat-form-field>
           <input matInput [(ngModel)]="qty" name="qty" placeholder="quantité">
-        </mat-form-field> 
+        </mat-form-field>
         <br>
         <button mat-button style="background-color: #284267; color: white; margin-left:22%;" class="w3-button" type="submit" value="Submit">Ajouter</button>
 
-      </form>    
+      </form>
 
     </mat-grid-tile>
 
     <mat-grid-tile>
         <div>
 
-          <h3>Liste des courses</h3>
+          <h3>Liste de courses</h3>
           <br>
 
           <table border="1">
             <thead>
             <tr>
               <th>Produit</th>
-              <th>Quantite</th>   
+              <th>Quantite</th>
             </tr>
             </thead>
 
@@ -43,20 +43,16 @@
             </tbody>
           </table>
                   <br>
-        
 
-          <button (click)="onCheckout()"  style="background-color: #284267; color: white; width: 130%;" class="w3-button w3-padding-large w3-large w3-margin-top">Checkout</button>
+
+          <button (click)="onCheckout()"  style="background-color: #284267; color: white; width: 130%;" class="w3-button w3-padding-large w3-large w3-margin-top">Validation</button>
 
         </div>
 
-    
-     
+
+
     </mat-grid-tile>
 
   </mat-grid-list>
 
 </div>
-
-
-
-

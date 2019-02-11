@@ -1,6 +1,6 @@
 <div class="container border" style="margin-top: 40px; width: 40%; ">
   <div >
-  	<h3> Commande pour : {{client.username}} </h3> <br> 
+  	<h3> Commande pour : {{client.username}} </h3> <br>
 
   	<h5> Adresse : {{client.city}}   </h5>
       <h5> Tel : {{client.tel}}  </h5>
@@ -9,7 +9,7 @@
               <thead>
               <tr>
                 <th>Produit</th>
-                <th>Quantite</th>   
+                <th>Quantite</th>
               </tr>
               </thead>
 
@@ -21,13 +21,11 @@
               </tbody>
             </table>
             <div style="margin-bottom: 2%;">
-  	          <button mat-button style="margin-right: 2%; background-color: #ffe785; text-align: center; width: 20%; font-size: 60%;" (click)="onProgress()">In progress</button>
-  	          <button mat-button style="margin-right: 2%; background-color: #e8ff59; text-align: center; width: 20% ; font-size: 60%;" (click)="onDelivered()">Delivered</button>
-  	          <button mat-button style="background-color: #b4d693; width: 20%; text-align: center; font-size: 60%;"  (click)="onPaid()">Paid</button>
+  	          <button mat-button style="margin-right: 2%; background-color: #ffe785; text-align: center; width: 20%; font-size: 60%;" (click)="onProgress()">Accepté</button>
+  	          <button mat-button style="margin-right: 2%; background-color: #e8ff59; text-align: center; width: 20% ; font-size: 60%;" (click)="onDelivered()">Délivré</button>
+  	          <button mat-button style="background-color: #b4d693; width: 20%; text-align: center; font-size: 60%;"  (click)="onPaid()">Payé</button>
   	       </div>
 
   </div>
 
 </div>
-
-

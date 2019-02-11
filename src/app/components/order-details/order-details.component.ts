@@ -4,7 +4,7 @@ import { ProductService } from '../../services/product.service' ;
 import { OrderService } from '../../services/order.service' ;
 import { ListeCourse } from '../../models/ListeCourse' ;
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { User } from '../../models/user' ; 
+import { User } from '../../models/user' ;
 import {MatSnackBar} from '@angular/material';
 
 
@@ -15,14 +15,14 @@ import {MatSnackBar} from '@angular/material';
 })
 export class OrderDetailsComponent implements OnInit {
 
-	private listeCourse: ListeCourse ; 
-	private id : string ; //order id 
+	private listeCourse: ListeCourse ;
+	private id : string ; //order id
 	private clientId: string ;
 	private client : User ;
 
 
   constructor(private userService :UserService,
-  	private orderService : OrderService , 
+  	private orderService : OrderService ,
   	private productService : ProductService,
   	private route: ActivatedRoute,
   	private router: Router,
@@ -31,12 +31,12 @@ export class OrderDetailsComponent implements OnInit {
   onProgress() {
     this.orderService.onProgress(this.id).subscribe(
       (res: string) => {
-         console.log(res); 
+         console.log(res);
         this.openSnackBar("onProgress");
       },
       error => {
-        console.log(error) ; 
-      } 
+        console.log(error) ;
+      }
     );
   }
 
@@ -44,37 +44,50 @@ export class OrderDetailsComponent implements OnInit {
 
   	this.orderService.onDelivered(this.id).subscribe(
       (res: string) => {
-       	console.log(res); 
+       	console.log(res);
         this.openSnackBar("Delivered");
       },
       error => {
-        console.log(error) ; 
-       }  
+        console.log(error) ;
+       }
   	);
-  	
+
   }
 
   onPaid(){
   	this.orderService.onPaid(this.id).subscribe(
       (res: string) => {
-       	console.log(res); 
+       	console.log(res);
         this.openSnackBar("Paid");
 
       },
       error => {
-        console.log(error) ; 
-       }  
+        console.log(error) ;
+       }
   	);
 
   }
 
   openSnackBar(state : string) {
     console.log("open snack bar");
-    this.snackBar.open("vous avez passez l'état de cette commande à " + state, null, {
-      duration: 2000,
-    });
+    if(state == "onProgress"){
+      this.snackBar.open("vous avez passez l'état de cette commande à Accepté" , null, {
+        duration: 2000,
+      });
+    }
+    if(state == "Delivered"){
+      this.snackBar.open("vous avez passez l'état de cette commande à Délivré" , null, {
+        duration: 2000,
+      });
+    }
+    if(state == "Paid"){
+      this.snackBar.open("vous avez passez l'état de cette commande à Payé" , null, {
+        duration: 2000,
+      });
+    }
 
-  }      
+
+  }
 
   ngOnInit() {
   	this.id =this.route.snapshot.paramMap.get('id');
@@ -85,16 +98,16 @@ export class OrderDetailsComponent implements OnInit {
         this.client = res.json() ;
       },
       error => {
-        console.log(error) ; 
-       }  
+        console.log(error) ;
+       }
   	);
   	this.orderService.getListByOrderId(this.id).subscribe(
       (res:ListeCourse) => {
         this.listeCourse = res ;
       },
       error => {
-        console.log(error) ; 
-       }  		
+        console.log(error) ;
+       }
   	);
   }
 

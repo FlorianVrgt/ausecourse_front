@@ -1,3 +1,5 @@
 export class AppConst {
-	public static serverPath = "http://ausecourseback.herokuapp.com" ;
+
+	public static serverPath = "https://ausecourseback.herokuapp.com/";
+
 }

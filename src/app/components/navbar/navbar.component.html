@@ -6,13 +6,13 @@
 	<div style="margin-left: 40%;" [hidden]="!loggedIn">
 		<button *ngIf="user" mat-button [matMenuTriggerFor]="menu"> Bonjour {{user.username}} </button>
 		<mat-menu #menu="matMenu">
-			<button mat-menu-item routerLink="/displayAccount">Afficher_Compte</button>
-			<button mat-menu-item routerLink="/modifAccount">Modifier_Compte</button>
+			<button mat-menu-item routerLink="/displayAccount">Afficher compte</button>
+			<button mat-menu-item routerLink="/modifAccount">Modifier compte</button>
 		</mat-menu>
-		<button *ngIf="user" [hidden]="!user.deliverer" mat-button routerLink="/livreurDashboard">commandes à gérer</button>
-		<button mat-button routerLink="/orders">mes commandes</button>
-		<button mat-button routerLink="/course">passer une commande</button>
-		<button mat-button (click)="logout()" value="Logout" class="button">Log out</button>
+		<button *ngIf="user" [hidden]="!user.deliverer" mat-button routerLink="/livreurDashboard">Commandes à livrer</button>
+		<button mat-button routerLink="/orders">Mes commandes</button>
+		<button mat-button routerLink="/course">Passer une commande</button>
+		<button mat-button (click)="logout()" value="Logout" class="button">Déconnexion</button>
 	</div>
 
 </mat-toolbar>

@@ -8,7 +8,9 @@ import { Order } from '../models/order' ;
 })
 export class OrderService {
 
-	private serverPath: string = "http://ausecourseback.herokuapp.com" ; 
+
+	private serverPath: string = "https://ausecourseback.herokuapp.com" ;
+
 
   constructor(private httpClient : HttpClient) { }
 
@@ -88,7 +90,7 @@ export class OrderService {
 		});
 
 		return this.httpClient.post(url, idOrder, {headers : tokenHeader,responseType:'text'});
-  	
+
 
   }
 
